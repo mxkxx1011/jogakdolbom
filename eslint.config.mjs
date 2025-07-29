@@ -45,6 +45,7 @@ const eslintConfig = [
       globals: {
         ...globals.browser,
         ...globals.node,
+        ...globals.jest,
       },
     },
     rules: {
