@@ -14,7 +14,7 @@ export const log = {
     }
   },
 
-  error(message: string, error: AxiosError) {
+  error(error: AxiosError) {
     if (isDevelop()) {
       console.group('[ERROR] API Error:');
       console.log('status : ', error.response?.status);
@@ -49,7 +49,7 @@ export const log = {
   },
 
   performance(startTime: number, endTime: number, url: string) {
-    if (process.env.NODE_ENV === 'development') {
+    if (isDevelop()) {
       const duration = endTime - startTime;
       console.log(`⏱️ API Performance: ${url} - ${duration.toFixed(2)}ms`);
     }
