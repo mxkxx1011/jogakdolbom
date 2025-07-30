@@ -1,5 +1,7 @@
 import { type ReactNode } from 'react';
 
+import QueryProvider from './providers/query-provider';
+
 import type { Metadata } from 'next';
 
 import './globals.css';
@@ -16,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ko'>
-      <body className='antialiased'>{children}</body>
+      <body className='antialiased'>
+        <QueryProvider>{children}</QueryProvider>
+      </body>
     </html>
   );
 }
