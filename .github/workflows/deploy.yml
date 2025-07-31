@@ -1,0 +1,61 @@
+name: 'build and deploy'
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: install dependencies
+        run: npm install
+
+      - name: type check
+        run: npm run type-check
+
+      - name: run lint
+        run: npm run lint
+
+      - name: build
+        run: npm run build
+
+  deploy:
+    name: Deploy to vercel
+
+jobs:
+  runs-on: ubuntu-latest
+  needs: build
+  container: pandoc/latex
+  if: github.event_name == 'push'
+  
+  steps:
+    - name: checkout
+      uses: actions/checkout@v4
+
+    - name: Install mustache (to update the date)
+      run: apk add ruby && gem install mustache
+
+    - name: creates output
+      run: sh ./build.sh
+
+    - name: Pushes to another repository
+      id: push_directory
+      uses: cpina/github-action-push-to-another-repository@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.AUTO_ACTIONS }}
+      with:
+        source-directory: 'output'
+        destination-github-username: 'mxkxx1011'
+        destination-repository-name: 'jogakdolbom'
+        user-email: ${{ secrets.EMAIL }}
+        commit-message: ${{ github.event.commits[0].message }}
+        target-branch: main
+    - name: Test get variable exported by push-to-another-repository
+      run: echo $DESTINATION_CLONED_DIRECTORY
