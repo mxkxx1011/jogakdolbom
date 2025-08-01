@@ -1,4 +1,101 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-display: swap;
+  font-family: Pretendard;
+  font-weight: 300;
+  src:
+    url('/fonts/pretendard/pretendard-light.woff2') format('woff2'),
+    url('/fonts/pretendard/pretendard-light.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Pretendard;
+  font-weight: 400;
+  src:
+    url('/fonts/pretendard/pretendard-regular.woff2') format('woff2'),
+    url('/fonts/pretendard/pretendard-regular.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Pretendard;
+  font-weight: 500;
+  src:
+    url('/fonts/pretendard/pretendard-medium.woff2') format('woff2'),
+    url('/fonts/pretendard/pretendard-medium.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Pretendard;
+  font-weight: 600;
+  src:
+    url('/fonts/pretendard/pretendard-semibold.woff2') format('woff2'),
+    url('/fonts/pretendard/pretendard-semibold.woff') format('woff');
+}
+@font-face {
+  font-display: swap;
+  font-family: Pretendard;
+  font-weight: 700;
+  src:
+    url('/fonts/pretendard/pretendard-bold.woff2') format('woff2'),
+    url('/fonts/pretendard/pretendard-bold.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Pretendard;
+  font-weight: 800;
+  src:
+    url('/fonts/pretendard/pretendard-extrabold.woff2') format('woff2'),
+    url('/fonts/pretendard/pretendard-extrabold.woff') format('woff');
+}
+
+@theme inline {
+  --color-black: #111111;
+  --color-light-gray: #f3f3f3;
+  --color-white: #ffffff;
+  --color-warm-white: #fafbf9;
+
+  --color-main-green-50: #f4faec;
+  --color-main-green-100: #e6f3d2;
+  --color-main-green-200: #cbe9ad;
+  --color-main-green-300: #aedf84;
+  --color-main-green-400: #93d662;
+  --color-main-green-500: #78be4c;
+  --color-main-green-600: #64a43f;
+  --color-main-green-700: #4f8932;
+  --color-main-green-800: #3b6f26;
+  --color-main-green-900: #2a561b;
+  --color-main-green-950: #1b3e10;
+
+  --color-point-puple: #644dc9;
+  --color-point-red: #e92c2c;
+
+  --tracking-0.08: -0.08em;
+  --tracking-0.6: -0.06em;
+  --tracking-0.5: -0.05em;
+  --tracking-0.45: -0.045em;
+  --tracking-0.4: -0.04em;
+  --tracking-0.35: -0.035em;
+  --tracking-0.15: -0.015em;
+}
+
+@layer utilities {
+  .text-sub-title {
+    font-size: 3rem;
+    line-height: 3.75rem;
+  }
+  .text-title {
+    font-size: 4rem;
+    line-height: 4.75rem;
+  }
+}
+
 :root {
+  font-family: Pretendard;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
