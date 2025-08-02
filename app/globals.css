@@ -98,17 +98,17 @@
   --color-white: #ffffff;
   --color-warm-white: #fafbf9;
 
-  --color-main-green-50: #f4faec;
-  --color-main-green-100: #e6f3d2;
-  --color-main-green-200: #cbe9ad;
-  --color-main-green-300: #aedf84;
-  --color-main-green-400: #93d662;
-  --color-main-green-500: #78be4c;
-  --color-main-green-600: #64a43f;
-  --color-main-green-700: #4f8932;
-  --color-main-green-800: #3b6f26;
-  --color-main-green-900: #2a561b;
-  --color-main-green-950: #1b3e10;
+  --color-main-green-50: #f4faf3;
+  --color-main-green-100: #e6f3dd;
+  --color-main-green-200: #c9e6b3;
+  --color-main-green-300: #bde0a9;
+  --color-main-green-400: #a1d788;
+  --color-main-green-500: #84c369;
+  --color-main-green-600: #699852;
+  --color-main-green-700: #537b40;
+  --color-main-green-800: #3c5f2f;
+  --color-main-green-900: #2c4522;
+  --color-main-green-950: #1c2d15;
 
   --color-point-puple: #644dc9;
   --color-point-red: #e92c2c;
@@ -133,6 +133,10 @@
   --tracking-0-035: 0.035rem;
   --tracking-0-025: 0.025rem;
   --tracking-0-015: 0.015rem;
+
+  --spacing-11: 2.75rem;
+  --spacing-45: 11.25rem;
+  --spacing-91: 22.75rem;
 }
 
 @layer utilities {
