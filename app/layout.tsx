@@ -1,5 +1,7 @@
 import { type ReactNode } from 'react';
 
+import { Toaster, Modal } from '@/shared/ui';
+
 import QueryProvider from './providers/query-provider';
 
 import type { Metadata } from 'next';
@@ -19,7 +21,13 @@ export default function RootLayout({
   return (
     <html lang='ko'>
       <body>
-        <QueryProvider>{children}</QueryProvider>
+        <div id='_modal' />
+        <div id='_toast' />
+        <QueryProvider>
+          {children}
+          <Toaster />
+          <Modal />
+        </QueryProvider>
       </body>
     </html>
   );

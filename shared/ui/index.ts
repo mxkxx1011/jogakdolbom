@@ -1,8 +1,11 @@
 export { Input } from './input';
 export { Textarea } from './textarea';
-export { Checkbox } from '@/shared/ui/checkbox';
+export { Checkbox } from './checkbox';
 export { Button } from './button';
 export * from './form';
 export { Label } from './label';
 export * from './radio';
 export * from './rating';
+export * from './toast';
+export * from './modal';
+export * from './overlay';

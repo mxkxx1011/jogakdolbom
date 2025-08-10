@@ -3,3 +3,8 @@ export { default as IconWhiteCircle } from './white_circle.svg';
 export { default as IconStarEmpty } from './star_empty.svg';
 export { default as IconStarFill } from './star_fill.svg';
 export { default as IconErrorCircle } from './error_circle.svg';
+export { default as IconCircleX } from './circle_x.svg';
+export { default as IconCircleCheck } from './circle_check.svg';
+export { default as IconCircleInfo } from './circle_info.svg';
+export { default as IconClose } from './close.svg';
+export { default as IconDropdownArrow } from './dropdown_arrow.svg';

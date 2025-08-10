@@ -110,8 +110,9 @@
   --color-main-green-900: #2c4522;
   --color-main-green-950: #1c2d15;
 
-  --color-point-puple: #644dc9;
+  --color-point-purple: #644dc9;
   --color-point-red: #e92c2c;
+  --color-point-blue: #2c7ee9;
 
   --color-gray-50: #faf9f6;
   --color-gray-100: #f4f1ec;
@@ -137,6 +138,19 @@
   --spacing-11: 2.75rem;
   --spacing-45: 11.25rem;
   --spacing-91: 22.75rem;
+
+  --z-base: 0;
+  --z-overlay: 900;
+  --z-dropdown: 1000;
+  --z-popover: 1010;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-side-bar: 1035;
+  --z-sheet: 1038;
+  --z-modal-overlay: 1040;
+  --z-modal: 1050;
+  --z-toast: 1060;
+  --z-tooltip: 1070;
 }
 
 @layer utilities {

@@ -1,3 +1,5 @@
+'use client';
+
 import { type ReactNode } from 'react';
 
 import { RatingContext } from './rating-context';
