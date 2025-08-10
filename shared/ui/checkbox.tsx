@@ -1,11 +1,12 @@
 'use client';
 
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/shared/util/index';
+
 import { IconCheck } from '../asset/icon';
-import { ComponentProps } from 'react';
-import { cva, VariantProps } from 'class-variance-authority';
 
 const baseCheckboxStyle = `
   cursor-pointer 

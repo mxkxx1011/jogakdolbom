@@ -1,8 +1,8 @@
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
+import { ComponentProps } from 'react';
 
 import { cn } from '@/shared/util/index';
-import { ComponentProps } from 'react';
 
 const baseButtonClass = cn(
   'py-3 max-h-11',
