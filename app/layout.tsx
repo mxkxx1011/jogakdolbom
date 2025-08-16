@@ -1,6 +1,7 @@
 import { type ReactNode } from 'react';
 
 import { Toaster, Modal } from '@/shared/ui';
+import { Header } from '@/widgets/header';
 
 import QueryProvider from './providers/query-provider';
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <div id='_modal' />
         <div id='_toast' />
         <QueryProvider>
+          <Header />
           {children}
           <Toaster />
           <Modal />

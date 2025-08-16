@@ -9,3 +9,8 @@ export * from './rating';
 export * from './toast';
 export * from './modal';
 export * from './overlay';
+export * from './header';
+export * from './page-tab';
+export * from './logo';
+export * from './icon-list';
+export * from './text';

@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
 
-import { cn } from '@/shared';
+import { cn } from '@/shared/util';
 
 function Input({ className, type, ...restProps }: ComponentProps<'input'>) {
   return (

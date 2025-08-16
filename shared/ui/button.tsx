@@ -2,7 +2,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { ComponentProps } from 'react';
 
-import { cn } from '@/shared/util/index';
+import { cn } from '@/shared/util';
 
 const baseButtonClass = cn(
   'py-3 max-h-11',
@@ -19,7 +19,7 @@ const baseButtonClass = cn(
   // Icon (svg) 관련 스타일
   '[&_svg]:pointer-events-none',
   '[&_svg]:shrink-0',
-  "[&_svg:not([class*='size-'])]:size-4",
+  "[&_svg:not([class*='size-'])]:size-5",
 
   // Focus & Ring
   'outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
@@ -45,7 +45,7 @@ const buttonVariants = cva(baseButtonClass, {
       sm: 'w-45 gap-1.5 ',
       lg: 'w-91 gap-1.5',
       full: 'w-full',
-      icon: 'size-9',
+      icon: 'size-9 py-0 leading-none',
       fit: 'w-fit',
     },
   },
