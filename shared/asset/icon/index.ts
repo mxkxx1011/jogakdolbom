@@ -20,3 +20,4 @@ export { default as IconMap } from './map.svg';
 export { default as IconPeople } from './people.svg';
 export { default as IconPuzzle } from './puzzle.svg';
 export { default as IconTime } from './time.svg';
+export { default as IconKakao } from './kakao.svg';

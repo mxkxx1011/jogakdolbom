@@ -4,7 +4,7 @@ import { Text } from '@/shared/ui';
 
 export default function Home() {
   return (
-    <main className='mt-20 text-center'>
+    <main className='mt-20 text-center bg-warm-white'>
       <div className='flex flex-col gap-1.5 py-16'>
         <Text as='h2' typography='home-title-1' className='text-main-green-900'>
           하루의 틈, 조각

@@ -7,7 +7,7 @@ function IconButton({
   children,
   className,
   onClick,
-  ...props
+  ...restProps
 }: ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
     <Button
@@ -15,7 +15,7 @@ function IconButton({
       size='icon'
       className={cn('', className)}
       onClick={onClick}
-      {...props}
+      {...restProps}
     >
       {children}
     </Button>

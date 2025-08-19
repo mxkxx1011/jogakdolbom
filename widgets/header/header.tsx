@@ -1,8 +1,46 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
+
+import { useUserStore } from '@/entities/user/model/user-store';
 import { IconBell, IconPeople } from '@/shared/asset';
-import { HeaderCore, IconList, Logo, PageTab, PageTabs } from '@/shared/ui';
-import { IconButton } from '@/shared/ui/icon-list/icon-button';
+import {
+  Button,
+  HeaderCore,
+  IconList,
+  Logo,
+  PageTab,
+  PageTabs,
+  IconButton,
+} from '@/shared/ui';
 
 function Header() {
+  const router = useRouter();
+
+  const { isLoggedIn } = useUserStore();
+
+  const RightComponent = isLoggedIn ? (
+    <IconList>
+      <IconButton aria-label='알림'>
+        <IconBell />
+      </IconButton>
+      <IconButton aria-label='마이페이지'>
+        <IconPeople />
+      </IconButton>
+    </IconList>
+  ) : (
+    <Button
+      size='fit'
+      variant='link'
+      onClick={() => {
+        router.push('/kakao');
+      }}
+      className='text-main-green-700'
+    >
+      로그인
+    </Button>
+  );
+
   return (
     <HeaderCore
       left={<Logo />}
@@ -13,16 +51,7 @@ function Header() {
           <PageTab href='/store'>조각 상점</PageTab>
         </PageTabs>
       }
-      right={
-        <IconList>
-          <IconButton aria-label='알림'>
-            <IconBell />
-          </IconButton>
-          <IconButton aria-label='사용자프로필'>
-            <IconPeople />
-          </IconButton>
-        </IconList>
-      }
+      right={RightComponent}
     />
   );
 }

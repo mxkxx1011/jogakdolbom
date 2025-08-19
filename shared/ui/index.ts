@@ -14,3 +14,4 @@ export * from './page-tab';
 export * from './logo';
 export * from './icon-list';
 export * from './text';
+export * from './spinner';

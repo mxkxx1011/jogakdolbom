@@ -1,9 +1,8 @@
 import { type ReactNode } from 'react';
 
+import { QueryProvider } from '@/shared/api';
 import { Toaster, Modal } from '@/shared/ui';
 import { Header } from '@/widgets/header';
-
-import QueryProvider from './providers/query-provider';
 
 import type { Metadata } from 'next';
 
