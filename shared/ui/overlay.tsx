@@ -9,7 +9,7 @@ function Overlay({ onClose }: { onClose: () => void }) {
       onClick={onClose}
       role='button'
       tabIndex={0}
-      className='fixed w-full h-full z-overlay inset-0 bg-black/50 cursor-pointer'
+      className='fixed w-full h-full z-(--z-overlay) inset-0 bg-black/50 cursor-pointer'
     />
   );
 }

@@ -139,14 +139,13 @@
   --spacing-91: 22.75rem;
 
   --z-base: 0;
-  --z-overlay: 900;
   --z-dropdown: 1000;
   --z-popover: 1010;
   --z-sticky: 1020;
   --z-fixed: 1030;
-  --z-side-bar: 1035;
   --z-sheet: 1038;
-  --z-modal-overlay: 1040;
+  --z-overlay: 1040;
+  --z-side-bar: 1045;
   --z-modal: 1050;
   --z-toast: 1060;
   --z-tooltip: 1070;

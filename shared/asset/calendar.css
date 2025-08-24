@@ -1,0 +1,87 @@
+.care-rdp {
+  font-size: 1rem; /* 16px */
+  font-weight: 600;
+  line-height: 1.125rem; /* 18px */
+  letter-spacing: -0.025rem; /* -0.4px */
+}
+
+.rdp-month,
+.rdp-month_grid {
+  width: auto; /* 고정 폭 제거 */
+  min-width: calc(7 * 48px + 6 * 8px);
+}
+
+.rdp-month_caption {
+  align-items: center;
+}
+
+.rdp-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 48px); /* 셀 48px 기준으로 7칸 */
+  gap: 8px; /* 요일 간 가로 간격 */
+  justify-content: start; /* 필요 시 가운데는 center */
+}
+
+.rdp-week {
+  display: grid;
+  grid-template-columns: repeat(7, 48px); /* 셀 48px 기준으로 7칸 */
+  gap: 8px; /* 요일 간 가로 간격 */
+  justify-content: start; /* 필요 시 가운데는 center */
+}
+
+.rdp-weeks {
+  display: grid;
+  gap: 0.625rem;
+}
+
+.rdp-table {
+  table-layout: fixed; /* 셀 폭 균등 분배 */
+  width: 100%;
+  border-collapse: separate;
+  width: calc(7 * 48px + 6 * 8px);
+}
+
+.rdp-head_cell,
+.rdp-cell {
+  padding: 0;
+  width: 48px; /* ← 열 너비 강제 */
+}
+
+.rdp-day {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rdp-day-disabled {
+  color: var(--color-gray-600); /* ← 원하는 회색 코드 */
+  pointer-events: none; /* hover/클릭 막기 */
+  background: transparent; /* 배경 제거 */
+
+  font-size: 0.875rem; /* 14px */
+  font-weight: 400;
+  line-height: 1.25rem; /* 20px */
+  letter-spacing: -0.021875rem; /* -0.35px */
+}
+
+.rdp-day-future {
+  background-color: var(--color-main-green-100);
+  &:hover {
+    background-color: var(--color-main-green-400);
+  }
+}
+
+.rdp-day-selected {
+  background-color: var(--color-main-green-800);
+  color: var(--color-main-green-50);
+  &:hover {
+    background-color: var(--color-main-green-800);
+  }
+}
+
+.rdp-chevron {
+  fill: var(--color-main-green-800);
+}

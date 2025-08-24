@@ -109,7 +109,7 @@ const FormLabel = forwardRef<
   return (
     <Label
       ref={ref}
-      className={cn('body-2 text-green-600', className)}
+      className={cn('body-2 text-green-800', className)}
       htmlFor={formItemId}
       {...restProps}
     />
