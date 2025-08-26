@@ -16,7 +16,6 @@ function CalendarPane() {
         <Controller
           name='serviceDate' // string: 'yyyy-MM-dd'
           control={control}
-          defaultValue='1' // ✅ controlled 보장
           render={({ field, fieldState }) => {
             const dateValue = field.value
               ? parse(field.value, 'yyyy-MM-dd', new Date())

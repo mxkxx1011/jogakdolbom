@@ -6,6 +6,7 @@ import { SelectHelpType } from '@/features/select-help-type/ui';
 import { Button, Form } from '@/shared/ui';
 
 import { HelpFields } from '../model/consts';
+import { useHelpMutation } from '../model/use-help-mutation';
 import { HelpInputField, ScheduleSection } from '../sections';
 
 function HelpRequestForm() {
@@ -16,6 +17,8 @@ function HelpRequestForm() {
     defaultValues: {
       helpType: '1',
       serviceDate: '',
+      startTime: '',
+      endTime: '',
       addressText: '',
       requestLocation: '',
       requestDetail: '',
@@ -23,8 +26,10 @@ function HelpRequestForm() {
     },
   });
 
+  const { mutate: postHelp } = useHelpMutation();
+
   const onSubmit = (data: HelpRequest) => {
-    alert(JSON.stringify(data));
+    postHelp(data);
   };
 
   return (
