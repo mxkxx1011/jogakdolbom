@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 
 import { useUserStore } from '@/entities/user/model/user-store';
-import { IconBell, IconPeople } from '@/shared/asset';
+import { IconPeople } from '@/shared/asset';
 import {
   Button,
   HeaderCore,
@@ -21,10 +21,10 @@ function Header() {
 
   const RightComponent = isLoggedIn ? (
     <IconList>
-      <IconButton aria-label='알림'>
-        <IconBell />
-      </IconButton>
-      <IconButton aria-label='마이페이지'>
+      <IconButton
+        onClick={() => router.push('/mypage')}
+        aria-label='마이페이지'
+      >
         <IconPeople />
       </IconButton>
     </IconList>
@@ -48,7 +48,7 @@ function Header() {
         <PageTabs>
           <PageTab href='/helps/new'>돌봄 요청</PageTab>
           <PageTab href='/helps'>돌봄 참여</PageTab>
-          <PageTab href='/store'>조각 상점</PageTab>
+          {/* <PageTab href='/store'>조각 상점</PageTab> */}
         </PageTabs>
       }
       right={RightComponent}

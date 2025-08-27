@@ -17,3 +17,8 @@ export interface ErrorResponse {
 }
 
 export type ResponseType<T> = SuccessResponse<T> | ErrorResponse;
+
+export interface Pagination {
+  page: number;
+  totalPage: number;
+}

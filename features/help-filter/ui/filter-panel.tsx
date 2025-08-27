@@ -1,0 +1,35 @@
+import { Button, Divider, Text } from '@/shared/ui';
+
+import { HelpTypeCheckboxList } from './help-type-checkbox-list';
+import { MatchStatusRadioGroup } from './match-status-radio-group';
+
+function FilterPanel() {
+  return (
+    <div className='w-1/4 flex flex-col gap-7.5'>
+      <div className='flex items-center justify-between '>
+        <Text>필터</Text>
+        <Button
+          type='button'
+          variant='link'
+          className='caption-1 text-gray-700 underline'
+        >
+          초기화
+        </Button>
+      </div>
+      <MatchStatusRadioGroup />
+      <Divider />
+      <HelpTypeCheckboxList />
+      <div className='flex justify-end'>
+        <Button
+          type='submit'
+          variant='link'
+          className='caption-1 text-gray-700 underline'
+        >
+          적용
+        </Button>
+      </div>
+    </div>
+  );
+}
+
+export { FilterPanel };

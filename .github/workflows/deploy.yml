@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+      NEXT_PUBLIC_API_TIMEOUT: ${{ secrets.NEXT_PUBLIC_API_TIMEOUT }}
     steps:
       - name: checkout code
         uses: actions/checkout@v4

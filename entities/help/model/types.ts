@@ -1,5 +1,7 @@
 import { z } from 'zod';
 
+import { Pagination } from '@/shared/type';
+
 export const HelpRequestSchema = z.object({
   helpType: z.enum(['1', '2', '3', '4']),
   serviceDate: z.string().min(1, { message: '서비스 날짜를 선택해주세요.' }),
@@ -18,14 +20,30 @@ export const HelpRequestSchema = z.object({
 
 export type HelpRequest = z.infer<typeof HelpRequestSchema>;
 
-// export interface HelpRequest {
-//   helpType: 1 | 2 | 3 | 4;
-//   serviceDate: string;
-//   startTime: string;
-//   endTime: string;
-//   addressText: string;
-//   requestLocation: string;
-//   requestDetail: string;
-//   requestNote: string;
-//   image: string | null;
-// }
+export interface Help {
+  id: number;
+  helpType: 1 | 2 | 3 | 4;
+  helpTypeText: string;
+  serviceDate: string;
+  startTime: string;
+  endTime: string;
+  addressText: string;
+  rewardTokens: number;
+  createdAt: string;
+  updatedAt: string;
+  durationMinutes: number;
+  requester: HelpRequester;
+}
+
+export interface HelpRequester {
+  id: number;
+  nickname: string;
+  imageUrl: string | null;
+  avgRating: number;
+  reviewCount: number;
+}
+
+export interface HelpData {
+  requests: Help[];
+  pagination: Pagination;
+}

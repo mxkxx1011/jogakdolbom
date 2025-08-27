@@ -40,6 +40,8 @@ const buttonVariants = cva(baseButtonClass, {
       ghost:
         'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
       link: 'text-primary underline-offset-4 hover:underline',
+      detail:
+        'py-2 px-7 subtitle-1 rounded bg-main-green-100 text-main-green-900 disabled:bg-gray-200 disabled:text-gray-500 disabled:cursor-disabled hover:bg-main-green-400 active:bg-main-green-800 active:text-white',
     },
     size: {
       sm: 'w-45 gap-1.5 ',

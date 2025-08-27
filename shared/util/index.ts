@@ -3,3 +3,6 @@ export { isDevelop } from './is-develop';
 export { log } from './dev-log';
 export { isServer } from './is-server';
 export { isClient } from './is-client';
+export { formatDate } from './format-date';
+export { getGuDong } from './gu-dong';
+export { diffMinutes } from './diff-minutes';

@@ -8,6 +8,22 @@ const nextConfig: NextConfig = {
     });
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'img1.kakaocdn.net',
+      },
+      {
+        protocol: 'http',
+        hostname: 't1.kakaocdn.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'jogakdolbom.s3.ap-northeast-2.amazonaws.com',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

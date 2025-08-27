@@ -23,9 +23,9 @@ function clientQuery() {
           return failureCount < 1;
         },
 
-        refetchOnMount: true,
+        refetchOnMount: false,
         refetchOnWindowFocus: false,
-        refetchOnReconnect: true,
+
         retryDelay: (failureCount) => {
           return Math.min(1000 * 2 ** failureCount, 30000);
         },
