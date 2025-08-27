@@ -9,9 +9,10 @@ function FilterPanel() {
       <div className='flex items-center justify-between '>
         <Text>필터</Text>
         <Button
+          size='fit'
           type='button'
           variant='link'
-          className='caption-1 text-gray-700 underline'
+          className='caption-1 text-gray-700 underline hover:text-gray-900'
         >
           초기화
         </Button>
@@ -23,9 +24,10 @@ function FilterPanel() {
         <Button
           type='submit'
           variant='link'
-          className='caption-1 text-gray-700 underline'
+          size='fit'
+          className='caption-1 text-gray-700 underline hover:text-gray-900'
         >
-          적용
+          적용하기
         </Button>
       </div>
     </div>

@@ -30,6 +30,13 @@ const baseButtonClass = cn(
 
 const buttonVariants = cva(baseButtonClass, {
   variants: {
+    size: {
+      sm: 'w-45 gap-1.5',
+      lg: 'w-91 gap-1.5',
+      full: 'w-full',
+      icon: 'size-9 py-0 leading-none',
+      fit: 'w-fit',
+    },
     variant: {
       solid:
         'bg-main-green-300 text-main-green-900 hover:bg-main-green-500 active:bg-main-green-700 active:text-main-green-50 disabled:bg-gray-200 disabled:text-gray-600',
@@ -41,14 +48,7 @@ const buttonVariants = cva(baseButtonClass, {
         'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
       link: 'text-primary underline-offset-4 hover:underline',
       detail:
-        'py-2 px-7 subtitle-1 rounded bg-main-green-100 text-main-green-900 disabled:bg-gray-200 disabled:text-gray-500 disabled:cursor-disabled hover:bg-main-green-400 active:bg-main-green-800 active:text-white',
-    },
-    size: {
-      sm: 'w-45 gap-1.5 ',
-      lg: 'w-91 gap-1.5',
-      full: 'w-full',
-      icon: 'size-9 py-0 leading-none',
-      fit: 'w-fit',
+        'rounded-xl py-2 px-7 w-32 inline-flex justify-center items-center subtitle-1 rounded bg-main-green-800 text-white disabled:bg-gray-200 disabled:text-gray-500 disabled:cursor-disabled hover:bg-main-green-900 active:bg-main-green-800 active:text-white body-8',
     },
   },
   defaultVariants: {

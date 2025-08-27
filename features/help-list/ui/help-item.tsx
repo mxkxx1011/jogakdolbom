@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Help } from '@/entities/help/model/types';
 import { IconPuzzle, IconTime } from '@/shared/asset';
 import { Button, Profile, Text } from '@/shared/ui';
-import { cn, diffMinutes, formatDate, getGuDong } from '@/shared/util';
+import { cn, formatDate, getGuDong } from '@/shared/util';
 import { getPieces } from '@/shared/util/get-pieces';
 
 import { InfoItem } from './info-item';
@@ -27,8 +27,15 @@ const hhmm = (iso: string) => iso.slice(11, 16);
 function HelpItem({ help, colorType }: Props) {
   const router = useRouter();
 
-  const { helpType, addressText, serviceDate, startTime, endTime, requester } =
-    help;
+  const {
+    helpType,
+    addressText,
+    serviceDate,
+    startTime,
+    endTime,
+    requester,
+    durationMinutes,
+  } = help;
 
   const { nickname, imageUrl, avgRating, reviewCount } = requester;
 
@@ -39,25 +46,18 @@ function HelpItem({ help, colorType }: Props) {
   return (
     <div
       className={cn(
-        'flex items-center justify-between py-4.5 border-b border-gray-500',
+        'flex items-center justify-between py-4.5 px-15 border-b border-gray-300',
         colorType === 'white' ? 'bg-white' : 'bg-gray-50',
       )}
     >
       <div className='flex items-center gap-2.5'>
         <Profile imageUrl={imageUrl} />
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col gap-1'>
           <Text typography='body-8'>{nickname}</Text>
-          <div className='flex items-center gap-1 text-gray-700'>
-            <Text as='span' typography='body-4'>
-              리뷰 {reviewCount}개
-            </Text>
-            <Text as='span' typography='body-4'>
-              ·
-            </Text>
-            <Text as='span' typography='body-4'>
-              ★{avgRating}점
-            </Text>
-          </div>
+
+          <Text as='span' typography='caption-2' className='text-gray-700'>
+            리뷰 {reviewCount}개 · ★ {avgRating}점
+          </Text>
         </div>
       </div>
 
@@ -74,15 +74,13 @@ function HelpItem({ help, colorType }: Props) {
       </div>
 
       <div className='flex gap-4'>
-        <InfoItem icon={<IconTime />}>
-          {diffMinutes(startTime, endTime)}분
-        </InfoItem>
+        <InfoItem icon={<IconTime />}>{durationMinutes}분</InfoItem>
         <InfoItem icon={<IconPuzzle />}>
-          {getPieces(diffMinutes(startTime, endTime))}조각
+          {getPieces(durationMinutes)}조각
         </InfoItem>
       </div>
       <Button onClick={handleClick} type='button' variant='detail'>
-        상세보기
+        돌봄 상세보기
       </Button>
     </div>
   );
