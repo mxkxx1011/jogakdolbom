@@ -1,31 +1,29 @@
-import Image from 'next/image';
+import { type ReactNode } from 'react';
 
-function Profile({
-  imageUrl,
-  size = 44,
-}: {
+import { cn } from '@/shared/util';
+
+import { Text } from '../text';
+
+import { ProfileImage } from './profile-image';
+
+interface Props {
+  name: string;
   imageUrl: string | null;
-  size?: number;
-}) {
-  if (!imageUrl) {
-    return (
-      <Image
-        src='/images/user_profile_circle.png'
-        alt='profile'
-        width={size}
-        height={size}
-        className='rounded-full'
-      />
-    );
-  }
+  bottomItem: ReactNode | null;
+  rightClassName?: string;
+}
+
+function Profile({ name, imageUrl, bottomItem, rightClassName }: Props) {
   return (
-    <Image
-      src={imageUrl}
-      alt='profile'
-      width={size}
-      height={size}
-      className='rounded-full'
-    />
+    <div className='flex items-center gap-2.5'>
+      <ProfileImage imageUrl={imageUrl} />
+      <div className={cn('flex flex-col gap-0.5', rightClassName)}>
+        <Text typography='body-8' className='text-main-green-900'>
+          {name}
+        </Text>
+        {bottomItem}
+      </div>
+    </div>
   );
 }
 

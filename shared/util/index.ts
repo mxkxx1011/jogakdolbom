@@ -6,3 +6,6 @@ export { isClient } from './is-client';
 export { formatDate } from './format-date';
 export { getGuDong } from './gu-dong';
 export { diffMinutes } from './diff-minutes';
+export { formatRelativeTime } from './format-relative-time';
+export { hhmm } from './hhmm';
+export { getPieces } from './get-pieces';

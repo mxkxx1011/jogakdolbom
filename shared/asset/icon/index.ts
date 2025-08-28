@@ -21,3 +21,4 @@ export { default as IconPeople } from './people.svg';
 export { default as IconPuzzle } from './puzzle.svg';
 export { default as IconTime } from './time.svg';
 export { default as IconKakao } from './kakao.svg';
+export { default as IconArrow } from './arrow.svg';

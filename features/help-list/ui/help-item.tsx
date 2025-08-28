@@ -4,9 +4,8 @@ import { useRouter } from 'next/navigation';
 
 import { Help } from '@/entities/help/model/types';
 import { IconPuzzle, IconTime } from '@/shared/asset';
-import { Button, Profile, Text } from '@/shared/ui';
-import { cn, formatDate, getGuDong } from '@/shared/util';
-import { getPieces } from '@/shared/util/get-pieces';
+import { Button, ProfileImage, Text } from '@/shared/ui';
+import { cn, formatDate, getGuDong, hhmm, getPieces } from '@/shared/util';
 
 import { InfoItem } from './info-item';
 
@@ -21,8 +20,6 @@ const helpTypeTextMap = {
   3: '동행 돌봄',
   4: '기타 돌봄',
 };
-
-const hhmm = (iso: string) => iso.slice(11, 16);
 
 function HelpItem({ help, colorType }: Props) {
   const router = useRouter();
@@ -51,7 +48,7 @@ function HelpItem({ help, colorType }: Props) {
       )}
     >
       <div className='flex items-center gap-2.5'>
-        <Profile imageUrl={imageUrl} />
+        <ProfileImage imageUrl={imageUrl} />
         <div className='flex flex-col gap-1'>
           <Text typography='body-8'>{nickname}</Text>
 
@@ -66,7 +63,7 @@ function HelpItem({ help, colorType }: Props) {
           {helpTypeTextMap[helpType]}
         </Text>
         <Text typography='body-4' className='text-gray-600'>
-          {getGuDong(addressText)}
+          {getGuDong({ address: addressText })}
         </Text>
         <Text typography='caption-2' className='text-gray-600'>
           {formatDate(serviceDate)} ・{`${hhmm(startTime)} - ${hhmm(endTime)}`}

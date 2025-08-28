@@ -31,7 +31,6 @@ function clientQuery() {
         },
         ...(isClient() && {
           throwOnError: true,
-          suspense: true,
         }),
       },
       mutations: {

@@ -36,6 +36,7 @@ const buttonVariants = cva(baseButtonClass, {
       full: 'w-full',
       icon: 'size-9 py-0 leading-none',
       fit: 'w-fit',
+      square: 'rounded-sm',
     },
     variant: {
       solid:

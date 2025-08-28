@@ -16,4 +16,5 @@ export * from './icon-list';
 export * from './text';
 export * from './spinner';
 export * from './divider';
-export * from './profile/profile';
+export * from './profile';
+export * from './rating-stat';
