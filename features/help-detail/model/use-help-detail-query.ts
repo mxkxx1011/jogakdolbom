@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { HelpQueryKeys } from '@/features/help-list/model/query';
+import { HelpQueryKeys } from '@/entities/help/model/query';
 
 import { getHelpDetail } from './service';
 

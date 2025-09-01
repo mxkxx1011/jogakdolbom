@@ -9,3 +9,4 @@ export { diffMinutes } from './diff-minutes';
 export { formatRelativeTime } from './format-relative-time';
 export { hhmm } from './hhmm';
 export { getPieces } from './get-pieces';
+export { getTimeRange } from './get-time-range';

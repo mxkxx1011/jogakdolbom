@@ -1,31 +1,28 @@
 import Image from 'next/image';
 
+import { cn } from '@/shared/util';
+
 function ProfileImage({
   imageUrl,
   size = 44,
+  className,
 }: {
   imageUrl: string | null;
   size?: number;
+  className?: string;
 }) {
-  if (!imageUrl) {
-    return (
-      <Image
-        src='/images/user_profile_circle.png'
-        alt='profile'
-        width={size}
-        height={size}
-        className='rounded-full'
-      />
-    );
-  }
   return (
-    <Image
-      src={imageUrl}
-      alt='profile'
-      width={size}
-      height={size}
-      className='rounded-full'
-    />
+    <div
+      style={{ width: size, height: size }}
+      className={cn('relative rounded-full overflow-hidden', className)}
+    >
+      <Image
+        src={imageUrl || '/images/user_profile_circle.png'}
+        alt='profile'
+        fill
+        className='object-cover'
+      />
+    </div>
   );
 }
 

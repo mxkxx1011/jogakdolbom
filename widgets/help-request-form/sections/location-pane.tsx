@@ -37,7 +37,8 @@ function LocationPane() {
               onClick={() => openModal(<MapPickerModal />)}
               className='flex items-center gap-1.5 body-0 text-gray-700'
             >
-              <IconMap /> {regionLabel ? regionLabel : '위치를 선택해주세요'}
+              <IconMap width={24} height={24} />{' '}
+              {regionLabel ? regionLabel : '위치를 선택해주세요'}
             </button>
           </div>
           <Divider className='my-6' />

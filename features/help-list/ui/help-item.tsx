@@ -71,7 +71,9 @@ function HelpItem({ help, colorType }: Props) {
       </div>
 
       <div className='flex gap-4'>
-        <InfoItem icon={<IconTime />}>{durationMinutes}분</InfoItem>
+        <InfoItem icon={<IconTime width={24} height={24} />}>
+          {durationMinutes}분
+        </InfoItem>
         <InfoItem icon={<IconPuzzle />}>
           {getPieces(durationMinutes)}조각
         </InfoItem>

@@ -2,9 +2,8 @@
 
 import { useSuspenseQuery } from '@tanstack/react-query';
 
-import { HelpData } from '@/entities/help/model/types';
+import { HelpQueryKeys, HelpData } from '@/entities/help';
 
-import { HelpQueryKeys } from './query';
 import { getHelpList } from './service';
 
 function useHelpList() {

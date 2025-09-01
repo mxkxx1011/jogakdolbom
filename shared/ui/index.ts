@@ -18,3 +18,5 @@ export * from './spinner';
 export * from './divider';
 export * from './profile';
 export * from './rating-stat';
+export * from './badge';
+export * from './rail';

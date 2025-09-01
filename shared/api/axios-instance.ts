@@ -48,6 +48,8 @@ axiosInstance.interceptors.response.use(
     if (status === 401) {
       // 토큰 만료 등 인증 실패
       if (typeof window !== 'undefined') {
+        // localStorage 정리
+        localStorage.removeItem('userInfo');
         useUserStore.getState().reset();
         toast.error('로그인이 만료되었어요. 다시 로그인해주세요');
       }

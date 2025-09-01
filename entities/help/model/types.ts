@@ -77,3 +77,42 @@ export interface HelpDetail {
   createdAt: string;
   updatedAt: string;
 }
+
+export type HelpHistoryStatus = 0 | 1; //(status 0: 요청, 1: 배정)
+export interface HelpApplicant {
+  helperId: number;
+  helperImageUrl: string | null;
+}
+
+export interface AssignedHelper {
+  nickname: string;
+  imageUrl: string | null;
+  reviewCount: number;
+  avgRating: number;
+}
+
+export interface HelpHistoryRequest {
+  id: number;
+  serviceDate: string;
+  startTime: string;
+  endTime: string;
+  helpType: HelpType;
+  helpTypeText: HelpTextType;
+  status: 0;
+  applicants: HelpApplicant[];
+  assignedHelper: null;
+}
+
+export interface HelpHistoryAssigned {
+  id: number;
+  serviceDate: string;
+  startTime: string;
+  endTime: string;
+  helpType: HelpType;
+  helpTypeText: HelpTextType;
+  status: 1;
+  applicants: HelpApplicant[];
+  assignedHelper: AssignedHelper;
+}
+
+export type HelpHistory = HelpHistoryRequest | HelpHistoryAssigned;
