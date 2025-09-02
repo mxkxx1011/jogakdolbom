@@ -21,9 +21,9 @@ function useHelpList({ size }: Pick<HelpFilter, 'size'>) {
       }),
     initialPageParam: 1,
     getNextPageParam: (lastPage) => {
-      const { page, totalPage } = lastPage.pagination;
+      const { page, totalPages } = lastPage.pagination;
 
-      return page < totalPage ? page + 1 : undefined;
+      return page < totalPages ? page + 1 : undefined;
     },
     select: (data) => {
       const helpList = data.pages.flatMap((page) => page.requests);
@@ -31,7 +31,7 @@ function useHelpList({ size }: Pick<HelpFilter, 'size'>) {
       return {
         helpList,
         page: data.pages[data.pages.length - 1].pagination.page,
-        totalPage: data.pages[data.pages.length - 1].pagination.totalPage,
+        totalPages: data.pages[data.pages.length - 1].pagination.totalPages,
       };
     },
   });

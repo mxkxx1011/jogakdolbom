@@ -12,9 +12,9 @@ function useHelpHistoryListQuery(size: number) {
     initialPageParam: 1,
     queryFn: ({ pageParam }) => getHelpHistoryList({ page: pageParam, size }),
     getNextPageParam: (lastPage) => {
-      const { page, totalPage } = lastPage.pagination;
+      const { page, totalPages } = lastPage.pagination;
 
-      return page < totalPage ? page + 1 : undefined;
+      return page < totalPages ? page + 1 : undefined;
     },
     select: (data) => {
       const helpHistoryList = data.pages.flatMap((page) => page.requests);
@@ -22,7 +22,7 @@ function useHelpHistoryListQuery(size: number) {
       return {
         helpHistoryList,
         page: data.pages[data.pages.length - 1]?.pagination.page,
-        totalPage: data.pages[data.pages.length - 1]?.pagination.totalPage,
+        totalPages: data.pages[data.pages.length - 1]?.pagination.totalPages,
       };
     },
     retry: false,

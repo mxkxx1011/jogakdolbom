@@ -1,4 +1,5 @@
 import { HelpRequestStatus, HelpType } from '@/entities/help';
+import { Pagination } from '@/shared/type';
 
 interface Help {
   id: number;
@@ -27,8 +28,5 @@ export interface HelpHistoryApplicantResponse {
   help: Help;
   totalApplicants: number;
   applicants: HelpApplicantDetail[];
-  pagination: {
-    page: number;
-    totalPages: number;
-  };
+  pagination: Pagination;
 }
