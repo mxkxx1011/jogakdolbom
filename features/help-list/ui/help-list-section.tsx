@@ -3,10 +3,11 @@
 import { Suspense } from 'react';
 
 import { HelpList } from './help-list';
+import { HelpListSkeleton } from './help-list-skeleton';
 
 function HelpListSection() {
   return (
-    <Suspense fallback={<div>loading...</div>}>
+    <Suspense fallback={<HelpListSkeleton />}>
       <HelpList />
     </Suspense>
   );

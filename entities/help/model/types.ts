@@ -116,3 +116,13 @@ export interface HelpHistoryAssigned {
 }
 
 export type HelpHistory = HelpHistoryRequest | HelpHistoryAssigned;
+
+export type HelpStatus = 0 | 1 | 2;
+export interface HelpFilter {
+  page: number;
+  size: number;
+  status?: HelpStatus;
+  helpTypes: HelpType[];
+}
+
+export type AppliedFilter = Pick<HelpFilter, 'status' | 'helpTypes'>;
