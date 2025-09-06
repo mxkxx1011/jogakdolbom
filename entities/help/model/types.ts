@@ -117,7 +117,7 @@ export interface HelpHistoryAssigned {
 
 export type HelpHistory = HelpHistoryRequest | HelpHistoryAssigned;
 
-export type HelpStatus = 0 | 1 | 2;
+export type HelpStatus = 0 | 1 | 2 | 3 | 4;
 export interface HelpFilter {
   page: number;
   size: number;
