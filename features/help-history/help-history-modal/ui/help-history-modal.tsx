@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { HelpHistory, HelpStatusBadge } from '@/entities/help';
+import { HelpDeleteModal } from '@/features/help-history/help-delete/ui/help-delete-modal';
 import {
   Button,
   ModalButtons,
@@ -36,7 +37,7 @@ function HelpHistoryModal({ helpHistory }: { helpHistory: HelpHistory }) {
 
   const { helpTypeText, status } = helpHistory;
 
-  const { closeModal } = useModalStore();
+  const { openModal, closeModal } = useModalStore();
 
   return (
     <ModalCloseWrapper>
@@ -60,7 +61,13 @@ function HelpHistoryModal({ helpHistory }: { helpHistory: HelpHistory }) {
         >
           닫기
         </Button>
-        <Button size='square' className='flex-1'>
+        <Button
+          size='square'
+          className='flex-1'
+          onClick={() =>
+            openModal(<HelpDeleteModal helpHistory={helpHistory} />)
+          }
+        >
           요청 취소하기
         </Button>
       </ModalButtons>
