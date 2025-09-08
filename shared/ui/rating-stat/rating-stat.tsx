@@ -1,6 +1,6 @@
 import { IconArrow } from '@/shared/asset';
-
 import { cn } from '@/shared/util';
+
 import { Text, TypographyType } from '../text';
 
 const StatTitle = {

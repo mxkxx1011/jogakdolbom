@@ -6,7 +6,7 @@ import { Text } from '@/shared/ui';
 
 function Kakao() {
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-col items-center w-full'>
       <div className='flex flex-col items-center gap-8 justify-center text-center'>
         <IconLogoSquare />
         <Text

@@ -12,6 +12,7 @@ const API_TIMEOUT = Number(process.env.NEXT_PUBLIC_API_TIMEOUT ?? '5000');
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
   timeout: API_TIMEOUT,
+  withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
   },

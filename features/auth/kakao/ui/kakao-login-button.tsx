@@ -20,7 +20,7 @@ function KakaoLoginButton({
     <button
       onClick={handleClick}
       className={cn(
-        'bg-[#FEE500] cursor-pointer w-100 flex gap-2 items-center justify-center py-3.5 rounded-md',
+        'bg-[#FEE500] cursor-pointer w-full px-8 max-w-100 md:w-100 flex gap-2 items-center justify-center py-3.5 rounded-md',
         className,
       )}
       {...restProps}
