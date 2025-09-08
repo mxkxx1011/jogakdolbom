@@ -11,11 +11,13 @@ function HelpApplicationButton({ helpDetail }: { helpDetail: HelpDetail }) {
   const { user } = useUserStore();
   const isRequester = user?.id === helpDetail.requester.id;
 
+  const isExpired = helpDetail.status === 4;
+
   return (
     <div className='flex justify-end'>
       <Button
         variant='detail'
-        disabled={isRequester}
+        disabled={isRequester || isExpired}
         onClick={() =>
           openModal(<HelpApplicationModal helpId={helpDetail.id} />)
         }

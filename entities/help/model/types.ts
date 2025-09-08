@@ -27,7 +27,7 @@ export const HelpRequestSchema = z.object({
 
 export type HelpRequest = z.infer<typeof HelpRequestSchema>;
 
-export type HelpRequestStatus = 0 | 1 | 2 | 3;
+export type HelpRequestStatus = 0 | 1 | 2 | 3 | 4;
 export type HelpRequestStatusText = '요청' | '배정' | '완료';
 
 export interface Help {
