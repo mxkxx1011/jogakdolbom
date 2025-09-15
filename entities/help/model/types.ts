@@ -81,7 +81,7 @@ export interface HelpDetail {
 export type HelpHistoryStatus = 0 | 1; //(status 0: 요청, 1: 배정)
 export interface HelpApplicant {
   helperId: number;
-  helperImageUrl: string | null;
+  imageUrl: string | null;
 }
 
 export interface AssignedHelper {
@@ -139,10 +139,12 @@ export interface HelpApplicantDetail {
     serviceDate: string;
     startTime: string;
     endTime: string;
+    addressText: string;
+    rewardTokens: number;
     requester: {
       id: number;
       nickname: string;
-      profileImageUrl: string | null;
+      imageUrl: string | null;
       reviewCount: number;
       ratingAvg: number;
     };

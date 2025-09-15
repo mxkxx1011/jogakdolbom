@@ -7,6 +7,11 @@ interface Help {
   helpTypeText: string;
   status: HelpRequestStatus;
   statusText: string;
+  addressText: string;
+  startTime: string;
+  endTime: string;
+  rewardTokens: number;
+  serviceDate: string;
 }
 
 export interface HelpApplicantDetail {
@@ -18,7 +23,7 @@ export interface HelpApplicantDetail {
   helper: {
     id: number;
     nickname: string;
-    profileImageUrl: string | null;
+    imageUrl: string | null;
     reviewCount: number;
     ratingAvg: number;
   };

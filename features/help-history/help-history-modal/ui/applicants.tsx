@@ -23,7 +23,12 @@ function HelpHistoryModalApplicants({
   const { applicants } = data;
 
   return (
-    <div className={cn('flex flex-col items-center gap-2 h-60', applicants.length === 0 && 'justify-center')}>
+    <div
+      className={cn(
+        'flex flex-col items-center gap-2 h-60',
+        applicants.length === 0 && 'justify-center',
+      )}
+    >
       {applicants.length === 0 && (
         <div className='text-center'>
           <Image

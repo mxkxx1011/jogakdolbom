@@ -19,7 +19,7 @@ function ProfileImageList({ userList }: { userList: HelpApplicant[] }) {
         <ProfileImage
           size={40}
           key={user.helperId}
-          imageUrl={user.helperImageUrl}
+          imageUrl={user.imageUrl}
           className={cn('ring-2 ring-white relative', `left-[${idx * -10}px]`)}
         />
       ))}

@@ -9,8 +9,16 @@ import { cn, formatDate, getTimeRange } from '@/shared/util';
 
 function MyHelpApplyItem({ applicant }: { applicant: HelpApplicantDetail }) {
   const { help } = applicant;
-  const { requester, serviceDate, helpType, startTime, endTime } = help;
-  const { nickname, profileImageUrl, ratingAvg, reviewCount } = requester;
+  const {
+    requester,
+    serviceDate,
+    helpType,
+    startTime,
+    endTime,
+    // addressText,
+    // rewardTokens,
+  } = help;
+  const { nickname, imageUrl, ratingAvg, reviewCount } = requester;
 
   return (
     <div
@@ -33,7 +41,7 @@ function MyHelpApplyItem({ applicant }: { applicant: HelpApplicantDetail }) {
         <Profile
           size={40}
           name={nickname}
-          imageUrl={profileImageUrl}
+          imageUrl={imageUrl}
           bottomItem={
             <HelperReviewInfo avgRating={ratingAvg} reviewCount={reviewCount} />
           }
