@@ -48,6 +48,7 @@ function HelpHistoryModalApplicants({
       )}
       {applicants.map((applicant) => (
         <HelpHistoryModalApplicantItem
+          helpHistoryId={helpHistoryId}
           applicant={applicant}
           key={applicant.applicationId}
         />

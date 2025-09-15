@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
-import { HelpHistory, HelpStatusBadge } from '@/entities/help';
+import { HelpHistory, HelpStatusBadge, HelpTypeToText } from '@/entities/help';
+import { ParticipantInformation } from '@/features/help/history/help-history-modal/ui/participant-information';
 import {
   Button,
   ModalButtons,
@@ -17,31 +18,44 @@ import { Action, HelpRailActions } from '../../ui/help-rail-actions';
 import { HelpHistoryModalApplicants } from './applicants';
 import { HelpHistoryModalDetail } from './detail';
 
+type TabId = 'detail' | 'applicants' | 'participant';
+
 function HelpHistoryModal({ helpHistory }: { helpHistory: HelpHistory }) {
-  const [activeAction, setActiveAction] = useState<'detail' | 'applicants'>(
-    'detail',
-  );
+  const [activeAction, setActiveAction] = useState<TabId>('detail');
 
-  const actions = [
-    {
-      id: 'detail',
-      label: '상세내용',
-      onClick: () => setActiveAction('detail'),
-    },
-    {
-      id: 'applicants',
-      label: '지원자 목록',
-      onClick: () => setActiveAction('applicants'),
-    },
-  ] as Action[];
-
-  const { helpTypeText, status } = helpHistory;
+  const { status, helpType } = helpHistory;
 
   const { openModal, closeModal } = useModalStore();
 
+  const actions: Action[] = useMemo(() => {
+    const base: Action[] = [
+      {
+        id: 'detail',
+        label: '상세내용',
+        onClick: () => setActiveAction('detail'),
+      },
+    ];
+
+    if (status === 0) {
+      base.push({
+        id: 'applicants',
+        label: '지원자 목록',
+        onClick: () => setActiveAction('applicants'),
+      });
+    } else if (status === 1) {
+      base.push({
+        id: 'participants',
+        label: '참여자 정보',
+        onClick: () => setActiveAction('participant'),
+      });
+    }
+
+    return base;
+  }, [status]);
+
   return (
     <ModalCloseWrapper>
-      <ModalTitle>{helpTypeText}</ModalTitle>
+      <ModalTitle>{HelpTypeToText(helpType)}</ModalTitle>
 
       <HelpStatusBadge className='my-2' status={status} size='sm' />
 
@@ -51,6 +65,9 @@ function HelpHistoryModal({ helpHistory }: { helpHistory: HelpHistory }) {
       )}
       {activeAction === 'applicants' && (
         <HelpHistoryModalApplicants helpHistoryId={helpHistory.id} />
+      )}
+      {activeAction === 'participant' && (
+        <ParticipantInformation helpHistory={helpHistory} />
       )}
       <ModalButtons>
         <Button

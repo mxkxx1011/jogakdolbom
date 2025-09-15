@@ -38,16 +38,18 @@ function HelpHistoryModalDetail({ helpHistory }: { helpHistory: HelpHistory }) {
         <ModalSection className='gap-1'>
           <ModalSectionTitle>상세 위치</ModalSectionTitle>
           <Textarea
-            value={data.requestLocation}
+            defaultValue={data.requestLocation}
             readOnly
+            spellCheck={false}
             className='w-full h-fit'
           />
         </ModalSection>
         <ModalSection className='gap-1'>
           <ModalSectionTitle>상세 내용</ModalSectionTitle>
           <Textarea
-            value={data.requestDetail}
+            defaultValue={data.requestDetail}
             readOnly
+            spellCheck={false}
             className='w-full h-fit'
           />
         </ModalSection>
@@ -55,8 +57,9 @@ function HelpHistoryModalDetail({ helpHistory }: { helpHistory: HelpHistory }) {
           <ModalSection className='gap-1'>
             <ModalSectionTitle>참고 사항</ModalSectionTitle>
             <Textarea
-              value={data.requestNote}
+              defaultValue={data.requestNote}
               readOnly
+              spellCheck={false}
               className='w-full h-fit'
             />
           </ModalSection>

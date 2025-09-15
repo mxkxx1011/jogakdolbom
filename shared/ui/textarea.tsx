@@ -2,7 +2,11 @@ import { ComponentProps } from 'react';
 
 import { cn } from '@/shared/util';
 
-function Textarea({ className, ...restProps }: ComponentProps<'textarea'>) {
+function Textarea({
+  className,
+  readOnly,
+  ...restProps
+}: ComponentProps<'textarea'>) {
   return (
     <textarea
       data-slot='textarea'
@@ -28,6 +32,8 @@ function Textarea({ className, ...restProps }: ComponentProps<'textarea'>) {
         'disabled:cursor-not-allowed disabled:opacity-50',
         // Invalid states
         'aria-invalid:text-point-red aria-invalid:outline-point-red',
+        readOnly &&
+          'outline-gray-200 bg-gray-50 text-gray-800 focus:text-gray-800 active:text-gray-800 focus:font-medium',
         className,
       )}
       {...restProps}
