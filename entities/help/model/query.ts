@@ -8,4 +8,5 @@ export const HelpQueryKeys = {
   historyList: () => [...HelpQueryKeys.all, 'history-list'] as const,
   historyApplicant: (helpHistoryId: number) =>
     [...HelpQueryKeys.all, 'history-applicant', helpHistoryId] as const,
+  applyList: () => [...HelpQueryKeys.all, 'apply-list'] as const,
 };

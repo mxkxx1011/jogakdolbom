@@ -11,12 +11,13 @@ interface Props {
   imageUrl: string | null;
   bottomItem: ReactNode | null;
   rightClassName?: string;
+  size?: number;
 }
 
-function Profile({ name, imageUrl, bottomItem, rightClassName }: Props) {
+function Profile({ name, imageUrl, bottomItem, rightClassName, size }: Props) {
   return (
     <div className='flex items-center gap-2.5'>
-      <ProfileImage imageUrl={imageUrl} />
+      <ProfileImage size={size} imageUrl={imageUrl} />
       <div className={cn('flex flex-col gap-0.5', rightClassName)}>
         <Text typography='body-8' className='text-main-green-900'>
           {name}

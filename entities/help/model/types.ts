@@ -126,3 +126,30 @@ export interface HelpFilter {
 }
 
 export type AppliedFilter = Pick<HelpFilter, 'status' | 'helpTypes'>;
+
+export interface HelpApplicantDetail {
+  applicationId: number;
+  status: number; // 범위가 어떻게 되는지
+  statusText: string; // 수락말고 뭐가 있는지
+  createdAt: string;
+  help: {
+    id: number;
+    helpType: HelpType;
+    helpTypeText: HelpTextType;
+    serviceDate: string;
+    startTime: string;
+    endTime: string;
+    requester: {
+      id: number;
+      nickname: string;
+      profileImageUrl: string | null;
+      reviewCount: number;
+      ratingAvg: number;
+    };
+  };
+}
+
+export interface HelpApplyResponse {
+  applications: HelpApplicantDetail[];
+  pagination: Pagination;
+}
