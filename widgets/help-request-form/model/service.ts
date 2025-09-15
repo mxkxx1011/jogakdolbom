@@ -1,4 +1,4 @@
-import { HelpRequest } from '@/entities/help/model/types';
+import { HelpRequest } from '@/entities/help';
 import { axiosInstance } from '@/shared/api';
 import { type ResponseType } from '@/shared/type';
 

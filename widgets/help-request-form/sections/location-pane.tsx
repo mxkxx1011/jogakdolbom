@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useFormContext } from 'react-hook-form';
 
-import { useUserStore } from '@/entities/user/model';
+import { useUserStore } from '@/entities/user';
 import { useLocationStore } from '@/features/map/model';
 import { MapPickerModal } from '@/features/map/ui';
 import { IconMap, IconPuzzle } from '@/shared/asset';

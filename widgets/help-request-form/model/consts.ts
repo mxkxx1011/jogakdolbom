@@ -1,6 +1,6 @@
 import { type Path } from 'react-hook-form';
 
-import { HelpRequest } from '@/entities/help/model/types';
+import { HelpRequest } from '@/entities/help';
 
 type HelpFieldDef = {
   name: Path<HelpRequest>;

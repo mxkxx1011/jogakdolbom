@@ -1,12 +1,12 @@
 'use client';
 
-import { useHelpDetailQuery } from '@/features/help-detail/model';
 import {
   HelpDetail,
+  HelpDetailImage,
   InfoText,
   ProfileSection,
-} from '@/features/help-detail/ui';
-import { HelpDetailImage } from '@/features/help-detail/ui/help-detail-image';
+  useHelpDetailQuery,
+} from '@/features/help/detail';
 import { IconMap } from '@/shared/asset';
 import { getGuDong } from '@/shared/util';
 

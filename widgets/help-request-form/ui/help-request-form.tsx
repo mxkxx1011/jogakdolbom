@@ -1,12 +1,11 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 
-import { HelpRequest, HelpRequestSchema } from '@/entities/help/model/types';
-import { SelectHelpType } from '@/features/select-help-type/ui';
+import { HelpRequest, HelpRequestSchema } from '@/entities/help';
+import { SelectHelpType } from '@/features/help/select-help-type';
 import { Button, Form } from '@/shared/ui';
 
-import { HelpFields } from '../model/consts';
-import { useHelpMutation } from '../model/use-help-mutation';
+import { HelpFields, useHelpMutation } from '../model';
 import { HelpInputField, ScheduleSection } from '../sections';
 
 function HelpRequestForm() {

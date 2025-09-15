@@ -1,8 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
 
-import { HelpQueryKeys } from '@/entities/help';
-import { HelpRequest } from '@/entities/help/model/types';
+import { HelpQueryKeys, HelpRequest } from '@/entities/help';
 import { toast } from '@/shared/ui';
 
 import { postHelpRequest } from './service';

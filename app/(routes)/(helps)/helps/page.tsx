@@ -2,17 +2,16 @@
 
 import { useEffect } from 'react';
 
-import { FilterPanel } from '@/features/help-filter/ui';
-import { useHelpFilterStore } from '@/features/help-list/model';
-import { HelpListSection } from '@/features/help-list/ui/help-list-section';
+import { FilterPanel } from '@/features/help/filter';
+import { HelpListSection, useHelpFilterStore } from '@/features/help/list';
 import { Text } from '@/shared/ui';
 
 function HelpsPage() {
-  const { resetApplied } = useHelpFilterStore()
+  const { resetApplied } = useHelpFilterStore();
 
   useEffect(() => {
-    resetApplied()
-  }, [])
+    resetApplied();
+  }, []);
 
   return (
     <main className='pt-11'>

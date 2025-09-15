@@ -1,20 +1,17 @@
 'use client';
 
-
 import { Suspense } from 'react';
 
-import { HelpHistoryList, type Action } from '@/features/help-history/ui';
+import { HelpHistoryList, type Action } from '@/features/help/history';
 import { PageTab } from '@/shared/ui';
 
 import { HelpHistoryRail } from './help-history-rail';
 
-
-
 function MyHelpInformation() {
   const actions = [
-    { id: 'requesting', label: '돌봄 요청 중', onClick: () => { } },
-    { id: 'participating', label: '돌봄 참여 중', onClick: () => { } },
-    { id: 'completed', label: '돌봄 완료', onClick: () => { } },
+    { id: 'requesting', label: '돌봄 요청 중', onClick: () => {} },
+    { id: 'participating', label: '돌봄 참여 중', onClick: () => {} },
+    { id: 'completed', label: '돌봄 완료', onClick: () => {} },
   ] as Action[];
 
   return (
