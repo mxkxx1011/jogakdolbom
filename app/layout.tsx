@@ -1,9 +1,8 @@
-import Script from 'next/script';
 import { type ReactNode } from 'react';
 
 import { QueryProvider } from '@/shared/api';
-import { SITE } from '@/shared/config/seo';
-import { GoogleAnalytics } from '@/shared/lib/google-analytics';
+import { SITE } from '@/shared/config';
+import { GoogleAnalytics, KakaoScript } from '@/shared/lib';
 import { Modal, Toaster } from '@/shared/ui';
 import { Header } from '@/widgets/header';
 
@@ -52,16 +51,13 @@ export default function RootLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html lang='ko'>
-      <head>
-        <GoogleAnalytics />
-      </head>
       <body>
-        <Script
-          strategy='beforeInteractive'
-          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_JS_KEY}&autoload=false`}
-        />
+        {GA_ID ? <GoogleAnalytics gaId={GA_ID} /> : null}
+        <KakaoScript />
 
         <div id='_modal' />
         <div id='_toast' />
