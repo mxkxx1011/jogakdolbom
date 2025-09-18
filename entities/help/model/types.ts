@@ -89,6 +89,7 @@ export interface AssignedHelper {
   imageUrl: string | null;
   reviewCount: number;
   avgRating: number;
+  message: string;
 }
 
 export interface HelpHistoryRequest {
@@ -146,7 +147,7 @@ export interface HelpApplicantDetail {
       nickname: string;
       imageUrl: string | null;
       reviewCount: number;
-      ratingAvg: number;
+      avgRating: number;
     };
   };
 }

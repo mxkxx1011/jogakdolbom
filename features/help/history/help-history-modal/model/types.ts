@@ -25,7 +25,7 @@ export interface HelpApplicantDetail {
     nickname: string;
     imageUrl: string | null;
     reviewCount: number;
-    ratingAvg: number;
+    avgRating: number;
   };
 }
 

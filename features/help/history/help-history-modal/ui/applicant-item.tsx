@@ -13,7 +13,7 @@ function HelpHistoryModalApplicantItem({
 }) {
   const { helper, message } = applicant;
 
-  const { reviewCount, ratingAvg } = helper;
+  const { reviewCount, avgRating } = helper;
 
   const acceptMutation = useAcceptHelpApplicantMutation({
     helpId: helpHistoryId,
@@ -28,7 +28,7 @@ function HelpHistoryModalApplicantItem({
         imageUrl={helper.imageUrl}
         bottomItem={
           <div className='flex flex-col gap-1 text-gray-700'>
-            <ReviewRatingInfo reviewCount={reviewCount} avgRating={ratingAvg} />
+            <ReviewRatingInfo reviewCount={reviewCount} avgRating={avgRating} />
             <Text typography='caption-2'>{message}</Text>
           </div>
         }

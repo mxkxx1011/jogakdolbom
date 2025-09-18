@@ -4,10 +4,8 @@ import { Label, Profile, Text, Textarea } from '@/shared/ui';
 function ParticipantInformation({ helpHistory }: { helpHistory: HelpHistory }) {
   const { assignedHelper } = helpHistory;
 
-  const { nickname, imageUrl, reviewCount, avgRating } = assignedHelper!;
-
-  const message =
-    '저도 아이가 있는데 아이와 즐거운 시간 보낼 수 있을 것 같아요';
+  const { nickname, imageUrl, reviewCount, avgRating, message } =
+    assignedHelper!;
 
   return (
     <div className='mt-2 mb-6 space-y-5'>

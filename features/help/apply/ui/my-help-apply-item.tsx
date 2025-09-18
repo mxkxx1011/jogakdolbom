@@ -18,7 +18,7 @@ function MyHelpApplyItem({ applicant }: { applicant: HelpApplicantDetail }) {
     // addressText,
     // rewardTokens,
   } = help;
-  const { nickname, imageUrl, ratingAvg, reviewCount } = requester;
+  const { nickname, imageUrl, avgRating, reviewCount } = requester;
 
   return (
     <div
@@ -43,7 +43,7 @@ function MyHelpApplyItem({ applicant }: { applicant: HelpApplicantDetail }) {
           name={nickname}
           imageUrl={imageUrl}
           bottomItem={
-            <HelperReviewInfo avgRating={ratingAvg} reviewCount={reviewCount} />
+            <HelperReviewInfo avgRating={avgRating} reviewCount={reviewCount} />
           }
         />
       </div>
